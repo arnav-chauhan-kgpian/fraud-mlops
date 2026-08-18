@@ -1,0 +1,8 @@
+# Force LF for files that run inside the Linux container.
+# (CRLF in start.sh would break the `#!/usr/bin/env bash` shebang on HF.)
+*.sh    text eol=lf
+Dockerfile text eol=lf
+start.sh text eol=lf
+
+# Store model binaries via Git LFS — Hugging Face rejects plain-git binary files.
+models/*.pkl filter=lfs diff=lfs merge=lfs -text

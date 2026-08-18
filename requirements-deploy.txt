@@ -1,0 +1,25 @@
+# Slim runtime dependencies for the Hugging Face Spaces (Docker) deployment.
+# Only what the FastAPI serving API + Streamlit dashboard import at runtime.
+# (Training/experiment deps — mlflow, shap, lightgbm, imbalanced-learn,
+#  matplotlib, seaborn — are intentionally excluded to keep the image small
+#  and fit the free tier's memory limit. Plots are pre-generated and committed.)
+
+# ── Core ─────────────────────────────────────────────
+pandas>=2.0.0
+numpy>=1.26.0
+
+# ── Model / preprocessing (must match the pickled artifacts) ──
+scikit-learn==1.5.2     # artifacts were fitted with 1.5.2; other versions break unpickling
+xgboost>=2.0.0          # serving model is an XGBClassifier
+joblib>=1.3.0
+
+# ── Serving API ──────────────────────────────────────
+fastapi>=0.110.0
+uvicorn>=0.29.0
+pydantic>=2.6.0
+
+# ── Dashboard ────────────────────────────────────────
+streamlit>=1.32.0
+requests>=2.31.0
+plotly>=5.20.0
+networkx>=3.2.0

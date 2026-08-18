@@ -1,0 +1,36 @@
+# Keep the image small. NOTE: we DO keep data/*.json and data/plots/*.png
+# (the dashboard needs them), but exclude the large training CSV and dev cruft.
+
+# Large training data — NOT needed for serving (only for training)
+*.csv
+data/creditcard_raw.csv
+data/creditcard_ingested.csv
+data/train*.csv
+data/val*.csv
+data/test*.csv
+
+# Python / env cruft
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Experiment tracking & logs
+mlruns/
+*.log
+
+# VCS / IDE
+.git/
+.gitignore
+.vscode/
+.idea/
+
+# Stuff not used at serve time
+notebooks/
+tests/
+models/_backup_pre_serving/
+models/graph_extractor.pkl

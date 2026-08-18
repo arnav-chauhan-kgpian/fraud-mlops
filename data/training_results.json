@@ -1,0 +1,21 @@
+{
+  "xgboost": {
+    "val": {
+      "pr_auc": 0.7763,
+      "roc_auc": 0.9627,
+      "f1": 0.75,
+      "ks": 0.8451,
+      "recall_at_threshold": 0.7636,
+      "precision_at_threshold": 0.7368
+    },
+    "test": {
+      "pr_auc": 0.7586,
+      "roc_auc": 0.9392,
+      "f1": 0.6964,
+      "ks": 0.8106,
+      "recall_at_threshold": 0.75,
+      "precision_at_threshold": 0.65
+    },
+    "threshold": 0.9924
+  }
+}

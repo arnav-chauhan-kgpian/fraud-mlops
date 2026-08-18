@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# Testing
+.pytest_cache/
+
+# Logs
+*.log
+pipeline.log
+
+# ML experiment tracking
+mlruns/
+
+# Models
+# Allowing the models/ folder for deployment
+# !models/
+# !models/*.pkl
+# *.pkl
+# Local-only backups created by train_serving.py — never deploy these
+models/_backup_pre_serving/
+*.pt
+*.pth
+*.ckpt
+
+# Data
+data/
+dataset/
+*.csv
+
+# Plots / outputs
+*.png
+
+# Environment
+.env
+venv/
+myenv/
